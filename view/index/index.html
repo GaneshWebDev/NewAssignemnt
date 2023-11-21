@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.css" integrity="sha512-bs9fAcCAeaDfA4A+NiShWR886eClUcBtqhipoY5DM60Y1V3BbVQlabthUBal5bq8Z8nnxxiyb1wfGX2n76N1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Add this style for the loading indicator -->
 <style>
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   #loadingIndicator {
     display: none;
     position: fixed;
@@ -16,12 +21,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  #previewImage, #realpreviewImage {
-    max-width: 100%; /* Make images responsive */
-    height: auto;    /* Maintain aspect ratio */
-    display: inline-block; /* Display as inline-block by default */
-  }
-
+  .images {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; /* Optional: Full width on smaller screens */
+    }
+    .images img{
+      height: 300px;
+      width:20% ;
+    }
   /* Apply block display on screens smaller than 576px (adjust as needed) */
   @media (max-width: 576px) {
     .images {
@@ -59,7 +67,7 @@
       <img id="previewImage" class="img-fluid" alt="Orginal Image">
       <img id="realpreviewImage" class="img-fluid" alt="Preview">
     </div>
-    <div class="d-flex">
+    <div class="d-flex ">
       <button id="cropButton" class="btn btn-primary mt-3 mr-5">Crop</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <button id="saveBtn" class="btn btn-primary mt-3">Save</button>
     </div>
